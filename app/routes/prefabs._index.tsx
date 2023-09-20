@@ -21,8 +21,7 @@ export default function Prefabs() {
 
     return (
         <div>
-            <h1>Prefabs</h1>
-            <p>Here are some prefabs</p>
+            <h1 className="text-xl">Prefabs</h1>
             {prefabs.map((prefab) => {
                 return (
                     <PrefabComponent key={prefab._id} {...prefab} />
