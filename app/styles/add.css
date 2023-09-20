@@ -1,0 +1,25 @@
+.container-add {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    max-width: 90%;
+    font-size: large;
+}
+.add-form {
+    display: flex;
+    flex-direction: column;
+    max-width: min-content;
+    align-items: center;
+    flex-grow: 4;
+}
+.prefab-submit-button {
+    text-align: center;
+    background-color: purple;
+    width: 100%;
+}
+.prefab-submit-button:hover {
+    background-color: blueviolet;
+}

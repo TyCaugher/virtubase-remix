@@ -1,7 +1,13 @@
 import type { ActionFunctionArgs } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import { json, redirect, LinksFunction } from "@remix-run/node";
 import { Form } from "@remix-run/react";
 import { mongodb } from "~/utils/db.server";
+
+import addStyles from "../styles/add.css"
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: addStyles },
+];
 
 export const action = async ({request}: ActionFunctionArgs) => {
     const formData = await request.formData()
@@ -18,15 +24,19 @@ export const action = async ({request}: ActionFunctionArgs) => {
 
 export default function Index() {
     return (
-      <div>
+      <div className="container-add">
         <h2>Add a prefab</h2>
-        <Form method="POST" action="/prefabs/add">
-          <input type="text" name="title" placeholder="Title" />
-          <input type="text" name="link" placeholder="link" />
-          <button type="submit">
-            Add
-          </button>
-        </Form>
+        <div className="add-form">
+          <Form method="POST" action="/prefabs/add">
+            <input type="text" name="title" placeholder="Title" />
+            <input type="text" name="link" placeholder="link" />
+            <input type="text" name="artist" placeholder="artist"/>
+            <input type="number" name="price" placeholder="price"/>
+            <button className="prefab-submit-button" type="submit">
+              Add
+            </button>
+          </Form>
+        </div>
       </div>
     )
   }
