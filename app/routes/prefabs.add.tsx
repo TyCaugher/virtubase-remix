@@ -10,9 +10,9 @@ export const action = async ({request}: ActionFunctionArgs) => {
         link: formData.get("link")
     }
 
-    const db = mongodb.db("test").collection("assets")
+    const db = await mongodb.db("test").collection("assets")
     const result = await db.insertOne(prefab)
-    //return json({result})
+    console.log("Adding", json(result))
     return redirect(`/prefabs/${result.insertedId}`)
 }
 
@@ -20,11 +20,11 @@ export default function Index() {
     return (
       <div>
         <h2>Add a prefab</h2>
-        <Form method="POST" action="/movies/add">
+        <Form method="POST" action="/prefabs/add">
           <input type="text" name="title" placeholder="Title" />
           <input type="text" name="link" placeholder="link" />
           <button type="submit">
-            Search
+            Add
           </button>
         </Form>
       </div>
