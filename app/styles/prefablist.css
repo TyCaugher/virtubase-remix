@@ -1,0 +1,58 @@
+/* Search results screen */
+.prefab-list-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  /* Search results list */
+  .prefab-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 600px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Search result item */
+  .prefab-list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Search result item title */
+  .prefab-list-item-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .prefab-list-item-price {
+    font-size: 14px;
+    color: #666
+  }
+  
+  /* Search result item description */
+  .prefab-list-item-description {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Search result item link */
+  .prefab-list-item-link {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  /* Search result item link hover */
+  .prefab-list-item-link:hover {
+    color: #007bff;
+  }
+  
